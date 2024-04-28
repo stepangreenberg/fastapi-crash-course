@@ -1,0 +1,4 @@
+.idea
+env
+tasks.db
+__pycache__
