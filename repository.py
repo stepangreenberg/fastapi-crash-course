@@ -1,12 +1,13 @@
 from database import new_session, TasksOrm
-from main import STaskAdd
 from sqlalchemy import select
 
 
 class TaskRepository:
+    from schemas import STaskAdd
+
     @classmethod
     async def add_one(cls, data: STaskAdd) -> int:
-        with new_session() as session:
+        async with new_session() as session:
             task_dict = data.model_dump()
             task = TasksOrm(**task_dict)
             session.add(task)

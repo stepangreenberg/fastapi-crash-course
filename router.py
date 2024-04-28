@@ -8,6 +8,7 @@ from schemas import STaskAdd
 
 router = APIRouter(
     prefix="/tasks",
+    tags=["Таски"],
 )
 
 
